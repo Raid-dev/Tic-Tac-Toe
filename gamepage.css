@@ -1,0 +1,236 @@
+body {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    background-image: linear-gradient(45deg, rgb(61, 61, 200), rgb(212, 69, 69));
+    color: whitesmoke;
+    letter-spacing: 2px;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+
+/*/////    PLATE STYLES    /////*/
+
+.plate-container {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-gap: 0em;
+    max-width: 10em;
+    position: absolute;
+    left: 42%;
+    top: 52%;
+    transform: translate(-50%, -50%);
+}
+.plates {
+    width: 8rem;
+    height: 8rem;
+    cursor: pointer;
+    border-radius: 2px;
+}
+.plates:hover {
+    outline: 3px solid yellow;
+    border: none;
+}
+
+.plate-4, .plate-5, .plate-6, .plate-7, .plate-8, .plate-9 {
+    border-top: 2px solid whitesmoke;
+}
+.plate-1, .plate-2, .plate-4, .plate-5, .plate-7, .plate-8 {
+    border-right: 2px solid whitesmoke;
+}
+.plate-1, .plate-2, .plate-3, .plate-4, .plate-5, .plate-6 {
+    border-bottom: 2px solid whitesmoke;
+}
+.plate-2, .plate-3, .plate-5, .plate-6, .plate-8, .plate-9 {
+    border-left: 2px solid whitesmoke;
+}
+
+.sign {
+    display: none;
+    font-size: 7rem;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    align-items: center;
+    justify-content: center;
+    margin-left: 1.25rem;
+}
+
+/*/////    PROMPT STYLES    /////*/
+
+.prompt {
+    position: absolute;
+    top: 10%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 2rem;
+}
+
+.scale {
+    animation: scale 1 0.6s ease-in forwards;
+}
+
+/*/////    LINES STYLES    /////*/
+
+.line {
+    display: none;
+    background-color: whitesmoke;
+    position: absolute;
+    outline: 0.2rem solid black;
+    border-radius: 2px;
+    z-index: 1;
+}
+
+.line-1, .line-2, .line-3 {
+    width: 0.2rem;
+    height: 0.2rem;   
+    left: 37.8%; 
+    transform: translateX(0.1rem);
+    animation: line-type1 1 0.5s linear forwards;
+}
+.line-4, .line-5, .line-6 {
+    width: 0.2rem;
+    height: 0.2rem;    
+    top: 28%;
+    transform: translateY(0.1rem);
+    animation: line-type2 1 0.5s linear forwards;
+}
+.line-7, .line-8 {
+    width: 0.2rem;
+    height: 0.2rem;    
+    left: 38%;
+}
+
+.line-1 {  
+    top: 34%;
+}
+.line-2 {  
+    top: 52%;
+}
+.line-3 {  
+    top: 70%;
+}
+
+.line-4 {  
+    left: 41%;
+}
+.line-5 {  
+    left: 49.5%;
+}
+.line-6 {  
+    left: 58%;
+}
+
+.line-7 {
+    transform:  translate(2rem, 12.8rem) rotate(45deg);
+    animation: line-type3 1 0.5s linear forwards;
+}
+.line-8 {
+    transform:  translate(3.9rem, 28.9rem) rotate(135deg);
+    animation: line-type4 1 0.5s linear forwards;
+}
+
+@keyframes line-type1 {
+    100% {
+        transform: translateX(0.1rem);
+        width: 22rem;
+    }
+}
+@keyframes line-type2 {
+    100% {
+        height: 22rem;
+    }
+}
+@keyframes line-type3 {
+    100% {
+        transform: translate(-2.3rem, 21.9rem) rotate(45deg);
+        width: 27rem;
+    }
+}
+@keyframes line-type4 {
+    100% {
+        transform: translate(-2.5rem, 21.9rem) rotate(135deg);
+        width: 27rem;
+    }
+}
+
+@keyframes scale {
+    70% {
+        transform: scale(1.6);
+        top: 7%;
+        left: 43.6%;
+    }
+}
+
+/* /////////////////// */
+
+.sides {
+    display: inline-block;
+    outline: 2px solid red;
+    text-align: center;
+    font-size: 1.6rem;
+}
+.p1-name span {
+    color: rgb(238, 64, 64);
+}
+.p2-name span{
+    color: rgb(63, 63, 237);
+}
+
+.p1-name span, .p2-name span {
+    font-size: 1.8rem;
+}
+
+/* ///////////////////////////////////////////// */
+
+.feedback-window {
+    display: none;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: rgb(172, 172, 56);;
+    border-radius: 1rem;
+    outline: 4px solid rgb(103, 103, 36);
+    z-index: 2;
+    padding: 3rem;
+}
+
+.feedback-window form {
+    margin-bottom: 9rem;
+}
+.feedback-window label {
+    font-size: 1.4rem;
+}
+
+.feedback-window textarea {
+    border-radius: 4px;
+    outline: 4px solid rgb(64, 238, 122);
+    border: none;
+    margin-top: 2px;
+    text-transform: capitalize;
+}
+.feedback-window textarea:focus {
+    outline: 6px solid rgb(194, 101, 83);
+}
+
+.player-feedbacks {
+    display: none;
+}
+
+.send-feedback-btn {
+    color: #fff;
+    background-color: #198754;
+    text-shadow: inset 0 3px 5px rgba(0, 0, 0, 0.125);
+    border-color: #198754;
+    position: absolute;
+    bottom: 5%;
+    left: 50%;
+    transform: translate(-50%, -5%);
+    font-size: 1.6rem;
+    padding: 0.4rem;
+    border-radius: 0.4rem;
+    cursor: pointer;
+}
+.send-feedback-btn:hover {
+    color: #fff;
+    border-color: #146c43;
+    background-color :#157347;
+}
